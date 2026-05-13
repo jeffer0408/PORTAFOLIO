@@ -239,3 +239,57 @@ footer a:hover {
     font-size: 17px;
   }
 }
+
+/* El contenedor del modal (La caja) */
+#miModal {
+  border: 2px solid #a855f7; /* Un morado vibrante pero fino */
+  border-radius: 15px;
+  background-color: #0d0d0d; /* Negro casi puro */
+  color: #f3e8ff; /* Texto blanco con un toque lila */
+  padding: 30px;
+  max-width: 400px;
+  text-align: center;
+  outline: none;
+
+  /* Sombra de neón suave (no exagerada) */
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+
+  /* Centrado absoluto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* El fondo que oscurece el resto de la página */
+#miModal::backdrop {
+  background-color: rgba(0, 0, 0, 0.85); /* Negro profundo */
+  backdrop-filter: blur(4px); /* Suaviza lo que está detrás */
+}
+
+/* Estilo para los títulos dentro del modal */
+#miModal h2 {
+  color: #d8b4fe;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
+
+/* El botón de cerrar (opcional, por si quieres uno interno) */
+#miModal button {
+  background: transparent;
+  border: 1px solid #a855f7;
+  color: #a855f7;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+#miModal button:hover {
+  background: #a855f7;
+  color: #fff;
+  box-shadow: 0 0 10px #a855f7;
+}
