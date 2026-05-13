@@ -41,18 +41,17 @@ nav ul li a:hover {
 
 header {
   background-color: #1a1a2e;
-  padding: 60px 5%; /* Ajusta el espacio lateral */
+  padding: 60px 5%;
   border-bottom: 2px solid #7c3aed;
 }
 
-/* Contenedor para alinear nombre a la izquierda y botón a la derecha */
 .contenedor-header {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Para que en móviles se vea bien */
+  flex-wrap: wrap;
 }
 
 .texto-header {
@@ -60,12 +59,10 @@ header {
 }
 
 header h1.efecto-neon {
-  font-size: 52px; /* Más grande */
   color: #fff;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  /* El efecto neón usando los colores de tu paleta */
   text-shadow:
     0 0 7px #7c3aed,
     0 0 10px #7c3aed,
@@ -79,7 +76,6 @@ header p {
   font-style: italic;
 }
 
-/* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
   .contenedor-header {
     flex-direction: column;
@@ -94,7 +90,6 @@ header p {
   }
 }
 
-/* ── Secciones ── */
 section {
   max-width: 860px;
   margin: 50px auto;
