@@ -1,0 +1,437 @@
+/* ═══════════════════════════════════════════
+   CV.css — Morado & Negro (versión calmada)
+   ═══════════════════════════════════════════ */
+
+:root {
+  --bg-dark: #0d0d14;
+  --bg-sidebar: #100e1a;
+  --bg-main: #0b0b12;
+  --purple-neon: #9d00ff;
+  --purple-bright: #bf40ff;
+  --purple-glow: #c77dff;
+  --cyan-accent: #00d4e8;
+  --text-primary: #ddd6f3;
+  --text-secondary: #9488b0;
+  --text-muted: #5e5478;
+  --border-neon: rgba(157, 0, 255, 0.3);
+  --border-subtle: rgba(157, 0, 255, 0.12);
+  --font-display: "Orbitron", monospace;
+  --font-body: "Rajdhani", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+}
+
+/* ══════════ LAYOUT ══════════ */
+.cv-wrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  max-width: 940px;
+  margin: 0 auto;
+  border: 1px solid var(--border-neon);
+  box-shadow: 0 0 40px rgba(157, 0, 255, 0.12);
+}
+
+/* ══════════ SIDEBAR ══════════ */
+.sidebar {
+  background: var(--bg-sidebar);
+  padding: 2.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+  border-right: 1px solid var(--border-neon);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(
+    circle,
+    rgba(157, 0, 255, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Foto ── */
+.photo-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--purple-neon);
+  box-shadow: 0 0 10px rgba(157, 0, 255, 0.5);
+  animation: rotateSlow 9s linear infinite;
+}
+
+.ring-inner {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(157, 0, 255, 0.35);
+  animation: rotateSlow 6s linear infinite reverse;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.photo-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(157, 0, 255, 0.25);
+  background: #1a0a2e;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Nombre ── */
+.name-block {
+  text-align: center;
+  width: 100%;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--purple-bright);
+  text-shadow: 0 0 6px rgba(157, 0, 255, 0.5);
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+.profession {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cyan-accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+  opacity: 0.85;
+}
+
+.divider-neon {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--purple-neon),
+    transparent
+  );
+  opacity: 0.5;
+  margin: 0.2rem 0;
+}
+
+.divider-neon.thin {
+  opacity: 0.2;
+}
+
+.contact-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.77rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.contact-item:hover {
+  color: var(--purple-glow);
+}
+
+.contact-item i {
+  color: var(--purple-neon);
+  font-size: 0.68rem;
+  width: 14px;
+  text-align: center;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+/* ── Redes ── */
+.social-block {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-neon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple-glow);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background: rgba(157, 0, 255, 0.04);
+}
+
+.social-icon:hover {
+  background: var(--purple-neon);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(157, 0, 255, 0.4);
+}
+
+/* ── Skills sidebar ── */
+.skills-section {
+  width: 100%;
+}
+
+.sidebar-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--purple-neon);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+
+.title-bracket {
+  color: var(--cyan-accent);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 0.8rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  background: rgba(157, 0, 255, 0.03);
+  transition: border-color 0.2s;
+}
+
+.skill-item:hover {
+  border-color: var(--border-neon);
+}
+
+.skill-name {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+}
+
+.skill-level {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.skill-level.neon-text {
+  color: var(--purple-bright);
+}
+.skill-level.expert {
+  color: var(--cyan-accent);
+}
+.skill-level.basic {
+  color: var(--text-secondary);
+}
+
+/* ══════════ MAIN ══════════ */
+.main-content {
+  background: var(--bg-main);
+  padding: 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--purple-bright);
+  text-shadow: 0 0 6px rgba(157, 0, 255, 0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-bottom: 0.4rem;
+}
+
+.section-icon {
+  color: var(--cyan-accent);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.title-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(157, 0, 255, 0.5), transparent);
+}
+
+/* ── Entries ── */
+.entry {
+  padding: 0.8rem 0.9rem;
+  border-left: 2px solid var(--border-neon);
+  margin-left: 0.4rem;
+  position: relative;
+  border-radius: 0 4px 4px 0;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 1rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--purple-neon);
+  box-shadow: 0 0 6px rgba(157, 0, 255, 0.6);
+}
+
+.entry:hover {
+  background: rgba(157, 0, 255, 0.03);
+  transform: translateX(3px);
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.entry-company {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.entry-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--purple-neon);
+  border: 1px solid var(--border-subtle);
+  padding: 0.1rem 0.45rem;
+  border-radius: 20px;
+  opacity: 0.85;
+}
+
+.entry-role {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.entry-desc {
+  font-size: 0.79rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ══════════ SCAN LINE ══════════ */
+.scan-line {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.03) 3px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media (max-width: 680px) {
+  .cv-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-neon);
+  }
+}
+
+@media print {
+  .scan-line {
+    display: none;
+  }
+  .ring-outer,
+  .ring-inner {
+    animation: none;
+  }
+}
