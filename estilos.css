@@ -1,0 +1,251 @@
+/* =============================================
+   estilos.css — Portafolio Jefferson Ramos
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d0d1a;
+  color: #e0e0f0;
+}
+
+/* ── Navegación ── */
+nav {
+  background-color: #1a1a2e;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #7c3aed;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #c4b5fd;
+  font-size: 15px;
+}
+
+nav ul li a:hover {
+  color: #a855f7;
+  text-decoration: underline;
+}
+
+/* ── Header ── */
+header {
+  background-color: #1a1a2e;
+  text-align: center;
+  padding: 80px 20px;
+  border-bottom: 2px solid #7c3aed;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #c4b5fd;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 16px;
+  color: #9ca3af;
+  margin-bottom: 25px;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #7c3aed;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.boton:hover {
+  background-color: #6d28d9;
+}
+
+/* ── Secciones ── */
+section {
+  max-width: 860px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  font-size: 26px;
+  color: #a78bfa;
+  margin-bottom: 20px;
+  border-left: 4px solid #7c3aed;
+  padding-left: 12px;
+}
+
+.subtitulo {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-top: -12px;
+  margin-bottom: 25px;
+}
+
+/* ── Tarjeta sobre mí ── */
+.tarjeta {
+  background-color: #1a1a2e;
+  border: 1px solid #7c3aed;
+  border-radius: 10px;
+  padding: 25px;
+  line-height: 1.8;
+  color: #d1d5db;
+}
+
+.tarjeta strong {
+  color: #c4b5fd;
+}
+
+/* ── Contacto ── */
+.tarjetas-contacto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.tarjeta-contacto {
+  background-color: #1a1a2e;
+  border: 1px solid #7c3aed;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.tarjeta-contacto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+.icono {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.etiqueta {
+  font-size: 12px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.valor {
+  font-size: 14px;
+  color: #c4b5fd;
+  word-break: break-all;
+}
+
+/* ── Grid de semanas ── */
+.semanas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.semana-tarjeta {
+  background-color: #1a1a2e;
+  border: 1px solid #7c3aed;
+  border-radius: 10px;
+  padding: 20px 15px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+
+.semana-tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.45);
+  border-color: #a855f7;
+}
+
+.semana-tarjeta.proximamente {
+  opacity: 0.45;
+  pointer-events: none;
+  border-style: dashed;
+}
+
+.semana-num {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #7c3aed;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.semana-tarjeta.proximamente .semana-num {
+  background-color: #2d2d4e;
+  color: #9ca3af;
+}
+
+.semana-nombre {
+  font-size: 15px;
+  font-weight: bold;
+  color: #c4b5fd;
+}
+
+.semana-tema {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.semana-flecha {
+  font-size: 16px;
+  color: #7c3aed;
+  margin-top: 4px;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: #6b7280;
+  font-size: 13px;
+  border-top: 1px solid #2d2d4e;
+  margin-top: 60px;
+}
+
+footer p {
+  margin-bottom: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 650px) {
+  .semanas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tarjetas-contacto {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .semanas-grid {
+    grid-template-columns: 1fr;
+  }
+}
